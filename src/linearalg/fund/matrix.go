@@ -41,13 +41,18 @@ func IMat(size int) *Matrix {
   return mat
 }
 
+// Copy matrix
+func (mat *Matrix) CopyMat() *Matrix {
+  mat_c := mat
+  return mat_c
+}
+
 // Return an n x 1 matrix, given a vector
 func ColMat(vec Vector) *Matrix {
   mat := CreateMatrix(len(vec), 1)
   copy(mat.Data, vec)
   return mat
 }
-
 
 // Add two matrices of equal dimensions
 func (mat *Matrix) Add(mat_ *Matrix) *Matrix {
